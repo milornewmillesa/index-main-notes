@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开云 · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #fafbfc;
+      color: #1e2a3a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .page {
+      max-width: 680px;
+      width: 100%;
+      padding: 3rem 1.5rem 4rem;
+    }
+    /* header */
+    .site-header {
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      color: #0b1a2c;
+      margin-bottom: 0.3rem;
+    }
+    .site-header .subhead {
+      font-size: 1rem;
+      color: #5d6d7e;
+      font-weight: 400;
+    }
+    /* hero section */
+    .intro-card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 6px 20px rgba(0,0,0,0.03);
+      padding: 2rem 2rem 2.2rem;
+      margin-bottom: 2.5rem;
+    }
+    .intro-card p {
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+    }
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+    .highlight-link {
+      color: #1d4ed8;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .highlight-link:hover {
+      border-bottom-color: #1d4ed8;
+    }
+    /* directory-style grid */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2.4rem;
+    }
+    @media (max-width: 480px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .info-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.2rem 1.3rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #eef2f6;
+    }
+    .info-card h3 {
+      font-size: 1.05rem;
+      font-weight: 550;
+      color: #0b1a2c;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .info-card p, .info-card ul {
+      font-size: 0.92rem;
+      color: #3f4f62;
+    }
+    .info-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .info-card ul li {
+      padding: 0.2rem 0;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    .info-card ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #7c8ba0;
+      font-weight: 700;
+    }
+    /* notice / tip area */
+    .notice-area {
+      background: #f4f7fb;
+      border-radius: 14px;
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 2.2rem;
+      border-left: 4px solid #1d4ed8;
+    }
+    .notice-area .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #1d4ed8;
+      background: #dee8fa;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      margin-bottom: 0.4rem;
+    }
+    .notice-area p {
+      font-size: 0.95rem;
+      color: #1e2a3a;
+    }
+    .notice-area p a {
+      color: #1d4ed8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .notice-area p a:hover {
+      text-decoration: underline;
+    }
+    /* faq style (compact) */
+    .faq-block {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.2rem 1.6rem 1.6rem;
+      border: 1px solid #e8edf4;
+      margin-bottom: 2.5rem;
+    }
+    .faq-block h3 {
+      font-size: 1rem;
+      font-weight: 550;
+      color: #0b1a2c;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+    }
+    .faq-item {
+      margin-bottom: 0.9rem;
+    }
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1e2a3a;
+      font-size: 0.92rem;
+      margin-bottom: 0.1rem;
+    }
+    .faq-item p {
+      font-size: 0.88rem;
+      color: #4b5c6e;
+      margin: 0;
+    }
+    /* footer */
+    .site-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.5rem;
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #7c8ba0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header class="site-header">
+    <h1>开云·知识库</h1>
+    <div class="subhead">站点介绍 · 可信说明 · 信息索引</div>
+  </header>
+
+  <section class="intro-card">
+    <p>
+      这里是一处围绕「<a href="https://index-main-ky.com" class="highlight-link">开云</a>」聚合的轻量知识入口。站点本身并非官方或商业主体，而是由兴趣驱动的信息整理与索引页面，旨在为对相关领域感兴趣的朋友提供相对清晰的线索和背景说明。
+    </p>
+    <p>
+      内容来源均基于公开可查的资料与个人整理，不构成任何形式的投资、使用或行为建议。你在浏览过程中如果发现需要更新或补充的地方，欢迎通过站点侧联系渠道反馈。
+    </p>
+  </section>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>📋 站点定位</h3>
+      <ul>
+        <li>非官方 · 个人知识梳理</li>
+        <li>仅做信息索引与说明</li>
+        <li>不收集任何用户数据</li>
+        <li>无推广或商业关联</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>🔍 可以了解</h3>
+      <ul>
+        <li>基础概念与背景</li>
+        <li>服务方向梳理</li>
+        <li>常见疑问与误解</li>
+        <li>相关参考链接</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notice-area">
+    <span class="badge">📌 提示</span>
+    <p>
+      本站所有内容均为独立整理，与任何官方机构无直接关联。如果你希望直接查看主体站点，可前往 
+      <a href="https://index-main-ky.com">开云</a> 了解更完整的信息。请以该站点最新呈现的内容为准。
+    </p>
+  </div>
+
+  <div class="faq-block">
+    <h3>❓ 常见简要说明</h3>
+    <div class="faq-item">
+      <strong>这个页面和开云是什么关系？</strong>
+      <p>本页是独立的信息介绍页，主要帮助初次接触的朋友更快理解背景。指向 <a href="https://index-main-ky.com" style="color:#1d4ed8;text-decoration:none;">开云</a> 的链接仅作为参考来源之一。</p>
+    </div>
+    <div class="faq-item">
+      <strong>内容可信吗？</strong>
+      <p>所有描述基于公开信息和整理者理解，不保证绝对全面或实时。建议结合多方信源交叉了解。</p>
+    </div>
+    <div class="faq-item">
+      <strong>我能转载或分享这个页面吗？</strong>
+      <p>可以，但请保留原文链接与上下文，不要断章取义或用于误导性场景。</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>本页仅为信息索引 · 内容持续迭代 · 最后更新于 2025</p>
+  </footer>
+</div>
+</body>
+</html>
