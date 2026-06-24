@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 资料索引笔记</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans SC", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(145deg, #f9e3c5 0%, #f6d2a8 50%, #f5cba0 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.8rem;
+      line-height: 1.7;
+      color: #3d2f22;
+    }
+
+    .card {
+      max-width: 780px;
+      width: 100%;
+      background: rgba(255, 254, 250, 0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 44px;
+      padding: 2.6rem 2.8rem 2.8rem;
+      box-shadow: 0 16px 40px rgba(140, 85, 45, 0.18), 0 4px 12px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 20px 50px rgba(150, 90, 50, 0.22);
+    }
+
+    .story-opening {
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: #6b4d33;
+      border-left: 4px solid #dba67b;
+      padding-left: 1.2rem;
+      margin-bottom: 1.6rem;
+      font-style: italic;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #4c3626;
+      margin-bottom: 0.6rem;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      color: #896d50;
+      font-weight: 350;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px dashed #dcbfa5;
+      padding-bottom: 0.9rem;
+      font-size: 1rem;
+    }
+
+    .intro {
+      margin-bottom: 1.8rem;
+    }
+
+    .intro p {
+      margin-bottom: 1rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 1.6rem 0 1.8rem;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.85rem;
+      font-weight: 360;
+    }
+
+    .feature-list li::before {
+      content: "⤷";
+      position: absolute;
+      left: 0;
+      color: #b48362;
+      font-size: 1.25rem;
+    }
+
+    .highlight-link {
+      display: inline-block;
+      background: #e6cfb9;
+      color: #3d2a1b;
+      padding: 0.2rem 0.6rem 0.25rem;
+      border-radius: 30px;
+      font-weight: 450;
+      text-decoration: none;
+      transition: 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .highlight-link:hover {
+      background: #dbbc9f;
+      border-color: #b18664;
+      color: #241b13;
+    }
+
+    .scene-box {
+      background: #fbf6ed;
+      border-radius: 28px;
+      padding: 1.5rem 1.8rem;
+      margin: 1.8rem 0 1.5rem;
+      border: 1px solid #eedccd;
+    }
+
+    .scene-box h2 {
+      font-size: 1.25rem;
+      font-weight: 430;
+      margin-bottom: 0.8rem;
+      color: #5c3f2a;
+    }
+
+    .scene-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-note {
+      background: #f4ede4;
+      border-radius: 24px;
+      padding: 1.1rem 1.6rem;
+      margin: 1.5rem 0 1rem;
+      border-left: 6px solid #ccaa8d;
+    }
+
+    .faq-note summary {
+      cursor: pointer;
+      font-weight: 420;
+      color: #3d2b1d;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-note summary::after {
+      content: "▾";
+      font-size: 0.9rem;
+      transition: transform 0.2s;
+    }
+
+    .faq-note[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .faq-note .answer {
+      margin-top: 0.7rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid #d9c7b8;
+      font-size: 0.95rem;
+    }
+
+    .gentle-footer {
+      margin-top: 2rem;
+      font-size: 0.92rem;
+      color: #6f5542;
+      padding-top: 1rem;
+      border-top: 1px solid #e5d1bf;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    .gentle-footer a {
+      color: #7a5c42;
+      text-decoration: underline wavy #dbb294 1px;
+      text-underline-offset: 4px;
+      font-weight: 400;
+    }
+
+    .gentle-footer a:hover {
+      color: #2f2016;
+      text-decoration-color: #885f3f;
+    }
+
+    @media (max-width: 540px) {
+      body {
+        padding: 1rem;
+      }
+      .card {
+        padding: 1.8rem 1.5rem;
+        border-radius: 32px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      .story-opening {
+        font-size: 1rem;
+        padding-left: 0.9rem;
+      }
+      .feature-list li {
+        padding-left: 1.6rem;
+      }
+      .scene-box {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <div class="story-opening">
+      “零散的想法，需要一处安静的归档。”
+    </div>
+
+    <h1>爱游戏 · 资料整理手记</h1>
+    <div class="tagline">从信息索引的角度，重新梳理日常中的游戏内容</div>
+
+    <div class="intro">
+      <p>
+        很长一段时间里，我习惯把看到的好玩内容随手存进收藏夹，但过两周再去翻，那些文章、视频、图文攻略就像被打乱了页码的笔记本，再也找不到那一刻的上下文。<a href="https://linenews-igame.com" class="highlight-link">爱游戏</a>像是一本慢慢积累的公共索引簿——不追求全部收录，而是在每个主题下理出一条清晰的线索，让回顾的人可以顺着路径找到自己需要的片段。
+      </p>
+      <p>
+        这里不生产评价，也不追热榜，更多是保持一种整理的状态：把分散的资讯按玩法、风格、作者、年代轻轻归位。有时候只是几段文字加一个链接，有时候是一组对比表格，像老朋友在后院晒旧书，不慌不忙。
+      </p>
+    </div>
+
+    <ul class="feature-list">
+      <li>按主题标签组织内容，而非单纯时间线——适合回溯和对比</li>
+      <li>保留原文出处与版本信息，便于查证与延伸阅读</li>
+      <li>定期补充笔记和短评，但保持克制的篇幅</li>
+      <li>支持粗略搜索与分类导航，降低信息迷路感</li>
+    </ul>
+
+    <div class="scene-box">
+      <h2>📂 一个典型的使用场景</h2>
+      <p>你想找某款老游戏的开发访谈，但记不清作者和确切年份。在<a href="https://linenews-igame.com" class="highlight-link">爱游戏</a>的索引页面，你可以通过「开发故事」「独立游戏」「2010年代」等标签缩小范围，很快看到一篇整理了相关访谈出处的笔记——里面没有冗长转述，只有摘要和原始链接。顺着笔记往下，还可能发现同一作者的其他作品列表。</p>
+    </div>
+
+    <details class="faq-note">
+      <summary>❓ 常见想法 · FAQ 摘要</summary>
+      <div class="answer">
+        <p><strong>内容是自己写的还是转载？</strong> 以整理和引述为主，每篇笔记都会标明来源。部分概括性文字由编辑撰写，但不会伪造引用。</p>
+        <p><strong>更新频率如何？</strong> 不定期，但每次更新会补充一批新索引或修正旧链接。更像一个慢生长的资料簿。</p>
+        <p><strong>可以提交自己发现的好内容吗？</strong> 目前以内部整理为主，未来可能会开放建议通道，但不承诺收录。</p>
+      </div>
+    </details>
+
+    <div class="gentle-footer">
+      一份安静的索引 · <a href="https://linenews-igame.com">爱游戏</a> · 持续梳理中
+    </div>
+
+  </div>
+</body>
+</html>
